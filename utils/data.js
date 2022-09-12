@@ -2,7 +2,7 @@
 export default [
     {
         "img":"https://links.papareact.com/5j2",
-        "location":"London",
+        "location":"Paris",
         "distance":"45-minutes drive"
     },
     {
@@ -17,7 +17,7 @@ export default [
    },
     {
        "img":"https://links.papareact.com/5j2",
-       "location":"London",
+       "location":"Paris",
        "distance":"45-minutes drive"
    },
    {
