@@ -31,6 +31,9 @@ export default function Home() {
               ))}
               </div>
             </main>
+           <main>
+               <h1 className="text-4xl font-semibold py-8">Live Anywhere</h1> 
+             </main>
         </section>
    </div>
   );
@@ -38,7 +41,7 @@ export default function Home() {
 
 /*
 export const getStaticProps=async ()=>{
-   const exploreData=await fetch("https://links.papareact.com/pyp").then((res)=>res.json());
+   const exploreData=await fetch("https://links.papareact.com/zp1").then((res)=>res.json());
 
    console.log(exploreData);
 }*/
