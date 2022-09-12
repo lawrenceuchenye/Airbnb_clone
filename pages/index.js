@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Header from "../components/Header"
 import Banner from "../components/Banner"
 import SmallCard from "../components/SmallCard"
+import MediumCard from "../components/MediumCard"
 
 import data from "../utils/data"
 
@@ -33,6 +34,15 @@ export default function Home() {
             </main>
            <main>
                <h1 className="text-4xl font-semibold py-8">Live Anywhere</h1> 
+             <div className="flex space-x-3 overflow-x-scroll scrollbar-hide">
+               {data.map((data_)=>(
+                <MediumCard
+                   key={data_.img}
+                  title={data_.location}
+                 img_url={data_.img}
+               />
+               ))}
+               </div>
              </main>
         </section>
    </div>
