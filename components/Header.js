@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { SearchIcon,GlobeAltIcon,MenuIcon,UserCircleIcon } from "@heroicons/react/solid"
+import { SearchIcon,GlobeAltIcon,MenuIcon,UserCircleIcon,UserIcon } from "@heroicons/react/solid"
 import { useState } from "react"
 
 import 'react-date-range/dist/styles.css'; // main style file
@@ -12,6 +12,8 @@ const Header=()=>{
     const [searchInput,setSearchInput]=useState("");
     const [startDate,setStartDate]=useState(new Date());
     const [endDate,setEndDate]=useState(new Date());
+    const [guestNumber,setGuestNumber]=useState(1);
+
     const handleSelect=(ranges)=>{
          setStartDate(ranges.selection.startDate);
          setEndDate(ranges.selection.endDate);
@@ -49,6 +51,16 @@ const Header=()=>{
                     rangeColors={["#f87171"]}
                     onChange={handleSelect}
                   />
+                  <div className="flex border-b-2 mb-2">
+                     <h2 className="flex-grow text-2xl font-semibold">Number Of Guests</h2>
+                     <UserIcon className="h-8 w-7"/>
+                     <input type="number" className="w-12 pl-4 outline-none text-red-400" defaultValue={guestNumber} onChange={(e)=>setGuestNumber(e.target.value)} min={1}/>
+                   </div>
+                   <div className="flex">
+                       <button className="text-gray-500 flex-grow" onClick={()=>setSearchInput("")}>Cancel</button>
+                       <button className="text-red-400 flex-grow">Search</button>
+                     </div>
+
                   </div>
               )}
            </div>
