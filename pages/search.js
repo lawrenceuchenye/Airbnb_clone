@@ -17,7 +17,7 @@ const search=()=>{
 
     return(
         <div>
-           <Header />
+           <Header placeholder={`${location}`} />
            <main>
                <section className="pt-14 px-6">
                   <p className="text-xs">300+ Stays - {ranges} for {noOfGuest} number of guests</p>
@@ -38,3 +38,4 @@ const search=()=>{
 
 
 export default search;
+

@@ -9,7 +9,7 @@ import { DateRangePicker } from 'react-date-range';
 
 import { useRouter } from "next/router"
 
-const Header=()=>{
+const Header=({placeholder})=>{
     const [searchInput,setSearchInput]=useState("");
     const [startDate,setStartDate]=useState(new Date());
     const [endDate,setEndDate]=useState(new Date());
@@ -46,7 +46,7 @@ const Header=()=>{
                    <Image width={300} src="https://links.papareact.com/qd3" layout="fill" objectPosition="left" objectFit="contain"/>
                    </div>
                 <div className="relative flex mt-4 md:mt-0 border-2 py-[5px] px-2 rounded-full shadow-sm">
-                     <input defaultValue={searchInput} onChange={(e)=>setSearchInput(e.target.value)} type="text" placeholder="Start Your Search." className="pl-5 flex-grow outline-none"/>
+                     <input defaultValue={searchInput} onChange={(e)=>setSearchInput(e.target.value)} type="text" placeholder={ placeholder || "Start Your Search."} className="pl-5 flex-grow outline-none"/>
                      <SearchIcon className="h-10 bg-red-400 p-2 rounded-full text-white" /> 
                    </div>
                 <div className="hidden md:flex items-center space-x-4 justify-end text-gray-500">
