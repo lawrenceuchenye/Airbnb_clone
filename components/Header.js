@@ -6,8 +6,8 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file7
 
 import { DateRangePicker } from 'react-date-range';
-import { useRouter } from "next/router"
 
+import { useRouter } from "next/router"
 
 const Header=()=>{
     const [searchInput,setSearchInput]=useState("");
@@ -20,7 +20,19 @@ const Header=()=>{
          setEndDate(ranges.selection.endDate);
     }
      
-     const router=useRouter();
+    const router=useRouter();
+
+    const searchFunc=()=>{
+        router.push({
+            pathname:"search/",
+            query:{
+                location:searchInput,
+                startDate:startDate.toISOString(),
+                endDate:endDate.toISOString(),
+                noOfGuest:guestNumber
+            }
+        });
+    }
 
     const selectedRange={
         startDate:startDate,
@@ -30,7 +42,7 @@ const Header=()=>{
 
     return(
         <div className="sticky top-0 z-50 grid gird-cols-2  md:grid-cols-3 bg-white shadow-md p-5">
-               <div className="relative flex w-[auto] items-center h-10 cursor-pointer">
+               <div onClick={()=>router.push("/")} className="relative flex w-[auto] items-center h-10 cursor-pointer">
                    <Image width={300} src="https://links.papareact.com/qd3" layout="fill" objectPosition="left" objectFit="contain"/>
                    </div>
                 <div className="relative flex mt-4 md:mt-0 border-2 py-[5px] px-2 rounded-full shadow-sm">
@@ -61,7 +73,7 @@ const Header=()=>{
                    </div>
                    <div className="flex">
                        <button className="text-gray-500 flex-grow" onClick={()=>setSearchInput("")}>Cancel</button>
-                       <button className="text-red-400 flex-grow" onClick={()=>router.push("search/")}>Search</button>
+                       <button className="text-red-400 flex-grow" onClick={()=>searchFunc()}>Search</button>
                      </div>
 
                   </div>
