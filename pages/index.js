@@ -6,6 +6,7 @@ import Banner from "../components/Banner"
 import SmallCard from "../components/SmallCard"
 import MediumCard from "../components/MediumCard"
 import LargeCard from "../components/LargeCard"
+import Footer from "../components/Footer"
 
 import data from "../utils/data"
 
@@ -52,6 +53,7 @@ export default function Home() {
                 btnTxt="Get Inspired" 
               />
         </section>
+      <Footer />
    </div>
   );
 }
