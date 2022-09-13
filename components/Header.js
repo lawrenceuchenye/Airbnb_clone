@@ -3,9 +3,10 @@ import { SearchIcon,GlobeAltIcon,MenuIcon,UserCircleIcon,UserIcon } from "@heroi
 import { useState } from "react"
 
 import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import 'react-date-range/dist/theme/default.css'; // theme css file7
 
 import { DateRangePicker } from 'react-date-range';
+import { useRouter } from "next/router"
 
 
 const Header=()=>{
@@ -18,6 +19,8 @@ const Header=()=>{
          setStartDate(ranges.selection.startDate);
          setEndDate(ranges.selection.endDate);
     }
+     
+     const router=useRouter();
 
     const selectedRange={
         startDate:startDate,
@@ -58,7 +61,7 @@ const Header=()=>{
                    </div>
                    <div className="flex">
                        <button className="text-gray-500 flex-grow" onClick={()=>setSearchInput("")}>Cancel</button>
-                       <button className="text-red-400 flex-grow">Search</button>
+                       <button className="text-red-400 flex-grow" onClick={()=>router.push("search/")}>Search</button>
                      </div>
 
                   </div>
