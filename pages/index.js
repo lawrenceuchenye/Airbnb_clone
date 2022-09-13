@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <Header />
       <Banner />
-      <section className="max-w-7xl mx-auto px-8 sm:px-16">
+      <section className="mx-auto px-8 sm:px-16">
          <main className="pt-6">
              <h1 className="text-4xl font-semibold pb-5">Explore Nearby</h1>
              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
